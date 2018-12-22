@@ -4,6 +4,15 @@ import PropTypes from 'prop-types';
 
 export default class SearchInput extends React.Component {
 
+    static propTypes = {
+      onSubmit: PropTypes.func.isRequired,
+      placeholder: PropTypes.string,
+    };
+    
+    static defaultProps = {
+      placeholder: '',
+    };
+
     constructor(props){
         super(props);
 
@@ -45,15 +54,6 @@ export default class SearchInput extends React.Component {
         );
     }
 }
-
-SearchInput.propTypes = {
-    onSumbit: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
-};
-
-SearchInput.defaultProps = {
-    placeholder: '',
-};
 
 const styles = StyleSheet.create({
     container: {
